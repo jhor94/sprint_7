@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { ShipsList } from '../interficies/ships-list';
+import { Ship } from '../interficies/ships-list';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,9 @@ export class shipsService {
 
   constructor() { }
 
-  getListShips(): Observable<ShipsList> {
-    return this.httpClient.get<ShipsList>(`https://swapi.dev/api/starships/`);
+  getShip(): Observable<Ship[]> {
+    return this.httpClient.get<{results: Ship[]}>(`https://swapi.dev/api/starships/`).pipe(
+      map((response: { results: Ship[]; }) => response.results)
+    );
   }
 }

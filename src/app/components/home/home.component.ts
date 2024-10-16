@@ -1,25 +1,35 @@
 import { Component, inject } from '@angular/core';
+import { StarshipsComponent } from '../starships/starships.component';
 import { shipsService } from '../../services/shipsService';
-import { ShipsList } from '../../interficies/ships-list';
+import { Ship } from '../../interficies/ships-list';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [StarshipsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 
-  service = inject(shipsService);
-  shipsList!: ShipsList;
+  shipService = inject(shipsService);
+  shipsList: Ship[] = [];
+  isLoading:boolean = false
 
-  getServiceApi() {
-    this.service.getListShips().subscribe((data: ShipsList) => {
+  currentnumber= 0
+
+  ngOnInit(): void {
+    this.getListShip();
+  }
+  getListShip() {
+    this.isLoading = true
+    this.shipService.getShip().subscribe((data: Ship[]) => {
       this.shipsList = data;
+      this.isLoading= false
       console.log(this.shipsList)
     })
 
   }
+ 
 }
 
