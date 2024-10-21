@@ -12,8 +12,8 @@ export class shipsService {
 
   constructor(private http: HttpClient) { }
 
-  getShip(): Observable<Ship[]> {
-    return this.http.get<{results:Ship[]}>(this.apiUrl).pipe(map(response => response.results))
+  getShip(page:number = 1): Observable<Ship[]> {
+    return this.http.get<{results:Ship[]}>(`${this.apiUrl}?page=${page}`).pipe(map(response => response.results))
   }
 
   getShipById(id: string): Observable<Ship> {

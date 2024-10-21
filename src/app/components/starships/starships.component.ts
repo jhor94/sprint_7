@@ -8,35 +8,37 @@ import { StarshipsDetailsComponent } from '../starships-details/starships-detail
 @Component({
   selector: 'app-starships',
   standalone: true,
-  imports: [RouterModule,CommonModule, StarshipsDetailsComponent],
+  imports: [RouterModule, CommonModule, StarshipsDetailsComponent],
   templateUrl: './starships.component.html',
   styleUrl: './starships.component.scss'
 })
-export class StarshipsComponent implements  OnInit{
+export class StarshipsComponent implements OnInit {
 
   shipService = inject(shipsService);
   shipsList: Ship[] = [];
 
-  currentnumber= 0
+  currentnumberPage = 1
 
-constructor(){
+  constructor() {
 
-}
+  }
   ngOnInit(): void {
     this.getListShip();
   }
   getListShip() {
-    this.shipService.getShip().subscribe((data: Ship[]) => {
-      this.shipsList = data.map(ship => ({
+    this.shipService.getShip(this.currentnumberPage).subscribe((data: Ship[]) => {
+      const newShips = data.map(ship => ({
         ...ship,
-        id: ship.url.split('/').slice(-2,-1)[0]
+        id: ship.url.split('/').slice(-2, -1)[0]
       }));
+      this.shipsList = [...this.shipsList, ...newShips]
       console.log(this.shipsList)
     })
   }
-  /*goDetail(name:string){
-    this.router.navigate(['/starship',name])
 
 
-  }*/
+  loadMoreShips() {
+    this.currentnumberPage++
+    this.getListShip()
+  }
 }

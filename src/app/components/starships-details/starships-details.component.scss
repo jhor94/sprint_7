@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Fira Code', monospace; 
+        background-color: black;
+
+}
+
+.container h3{
+    font-family: 'Fira Code', monospace;
+    font-weight: bold;
+    color: white;
+}
+
+.custom-row{
+    border: 2px solid grey;
+    margin-top: 20px;
+}
+.card{
+    width: 50%;
+    justify-content: end;
+    align-items: right;
+    margin-right: 50px;
+    display: flex;
+    border: 2px solid grey;
+    background-color: black;
+    color: white;
+    margin: 30px;
+}
+
+li{
+    list-style-type: none;
+    font-weight: bold;
+}
+

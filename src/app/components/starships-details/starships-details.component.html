@@ -1,15 +1,33 @@
-
-    <div class="card">
+<div class="container aling-item-center">
         @if(ship){
-        <h1>{{ ship.id }}</h1>
-        <h1>{{ ship.name }}</h1>
-        <p>Model: {{ ship.model }}</p>
-        <p>Manufacturer: {{ ship.manufacturer }}</p>
-        <p>Cost in Credits: {{ ship.cost_in_credits }}</p>
-        <p>Length: {{ ship.length }}</p>
-     
-    }
+        <div class="row custom-row">
+            <div class="col-12 d-flex">
+                <h3 class="">{{ ship.name }}</h3>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-end">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptatibus sunt consectetur
+                            assumenda asperiores magnam excepturi voluptas? Illum doloribus repellendus obcaecati officia
+                            ducimus neque natus quo a, voluptatem, earum odio?</p>
+                        </div>
+                        
+                        <ul class="row">
+                            <div class="col-6">
+                                <li>Model: {{ ship.model }}</li>
+                                <li>Manufacturer: {{ ship.manufacturer }}</li>
+                            </div>
+                            <div class="col-6">
+                                <li>Cost in Credits: {{ ship.cost_in_credits }}</li>
+                                <li>Length: {{ ship.length }}</li>
+                            </div>
+                        
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
 </div>
-
-
-    

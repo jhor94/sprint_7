@@ -1,14 +1,38 @@
-.navbar{
-    background-color: rgb(31, 30, 30);
-}
-.navbar a{
-    color: white;
-    font-family: 'Fira Code', monospace;
-    font-size: 20px;
-    text-decoration: underline;
-}
-.navbar a:hover{
-    color: rgb(255, 187, 0);
-    font-size: 25px;
+.container{
+    margin: 100px auto;
+    padding: 20px;
+    justify-content:center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    
+
 }
 
+.card{
+    box-shadow: 5px 10px rgba(246, 226, 116, 0.805);
+    background-color: rgb(0, 0, 0);
+    border-color:rgb(255, 210, 137);
+    border-width: 2px;
+    color: white;
+    margin: 10px;
+}
+
+h3, h1, h2{
+    font-family: 'Fira Code', monospace;
+    color: white;
+}
+h3{
+    font-size: 20px;
+    color: white;
+}
+
+img{
+    margin:40px;
+    height: 240px;
+    width: auto;
+}
+
+footer p{
+    color: white;
+}
