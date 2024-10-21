@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { shipsService } from '../../services/shipsService';
 import { Ship } from '../../interficies/ships-list';
 
@@ -16,10 +16,12 @@ export class StarshipsComponent implements  OnInit{
 
   currentnumber= 0
 
+
+
   ngOnInit(): void {
-    this.getServiceApi();
+    this.getListShip();
   }
-  getServiceApi() {
+  getListShip() {
     this.shipService.getShip().subscribe((data: Ship[]) => {
       this.shipsList = data;
       console.log(this.shipsList)

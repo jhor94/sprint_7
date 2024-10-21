@@ -14,4 +14,14 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'sprint_7';
+
+  mensajeParaHija:string = 'mensaje a hija'
+
+  showList: boolean = false;
+  
+  showshipsList(){
+    this.showList = !this.showList;
+  }
+
+
 }

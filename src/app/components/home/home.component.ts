@@ -19,9 +19,9 @@ export class HomeComponent {
   currentnumber= 0
 
   ngOnInit(): void {
-    this.getListShip();
+    this.getServiceApi();
   }
-  getListShip() {
+  getServiceApi() {
     this.isLoading = true
     this.shipService.getShip().subscribe((data: Ship[]) => {
       this.shipsList = data;

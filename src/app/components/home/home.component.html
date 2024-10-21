@@ -1,17 +1,13 @@
-<nav class="navbar navbar-expand-lg">
-    <div class=" container-fluid navbar-nav d-flex justify-content-center" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-link" (click)="getListShip()">Home</a>
-            <a class="nav-link">Star Ships</a>
+<div class="container-fluid">
+    <div class="card">
+        <div class=" card-body">
+            <div class="text-center">
+                <h1>BIENVENIDOS</h1>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary aling-item-centerd-flex m-3">COMENZAR</button>
         </div>
     </div>
-</nav>
-
-@for(ship of shipsList; track ship.name;){
-<div id="container" class="row text-center">
-    <div class="card">
-        <h2><a href="">{{ship.name}}</a></h2>
-        <p>{{ship.model}}</p>
-    </div>
 </div>
-}
+<!--[routerLink]="['/home']-->
