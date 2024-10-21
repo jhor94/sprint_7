@@ -7,13 +7,17 @@ import { Ship } from '../interficies/ships-list';
   providedIn: 'root'
 })
 export class shipsService {
+  private apiUrl = 'https://swapi.dev/api/starships/'
   httpClient = inject(HttpClient);
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getShip(): Observable<Ship[]> {
-    return this.httpClient.get<{results: Ship[]}>(`https://swapi.dev/api/starships/`).pipe(
-      map((response: { results: Ship[]; }) => response.results)
-    );
+    return this.http.get<{results:Ship[]}>(this.apiUrl).pipe(map(response => response.results))
   }
-}
+
+  getShipById(id: string): Observable<Ship> {
+    return this.http.get<Ship>(`${this.apiUrl}${id}/`);
+    }
+
+  }

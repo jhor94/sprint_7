@@ -1,12 +1,17 @@
 <div>
-@for(ship of shipsList; track ship.name;){
+@for(ship of shipsList; track ship.id){
+
     <div id="container" class="row text-center">
         <div class="card">
-            <h2><a href="">{{ship.name}}</a></h2>
+            <h2>
+                <button [routerLink]="['/starship', ship.id]"  routerLinkActive="active">{{ship.name}}</button>
+            </h2>
             <p>{{ship.model}} </p>
         </div>
     </div>
     }
+
 </div>
+
 
 

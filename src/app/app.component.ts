@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet} from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { StarshipsComponent } from './components/starships/starships.component';
 import { CommonModule } from '@angular/common';
+import { StarshipsDetailsComponent } from "./components/starships-details/starships-details.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent,LoginComponent,RegisterComponent, StarshipsComponent, CommonModule],
+  imports: [HomeComponent, LoginComponent, RegisterComponent, StarshipsComponent, CommonModule, StarshipsDetailsComponent, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

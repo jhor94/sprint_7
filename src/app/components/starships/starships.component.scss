@@ -13,13 +13,15 @@
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.611);
 }
 
-.card a{
+.card button{
     text-decoration: none;
     color: white;
+    background-color: transparent;
+    border: none;
     
 }
 
-.card a:hover{
+.card button:hover{
     text-decoration: underline;
 }
 .card h2{
