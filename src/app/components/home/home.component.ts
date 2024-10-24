@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { StarshipsComponent } from '../starships/starships.component';
 import { shipsService } from '../../services/shipsService';
 import { Ship } from '../../interficies/ships-list';
+import { RouterModule, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [StarshipsComponent],
+  imports: [StarshipsComponent, RouterModule, RouterOutlet],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -17,6 +18,7 @@ export class HomeComponent {
   isLoading:boolean = false
 
   currentnumber= 0
+routerLink: any;
 
   ngOnInit(): void {
     this.getServiceApi();

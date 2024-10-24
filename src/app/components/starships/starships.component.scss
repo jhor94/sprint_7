@@ -44,15 +44,17 @@
     width: 30%;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     border-color: black;
     margin:30px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    font-size: 20px;
 }
 #container .btn:hover{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 216, 22);
     color: rgb(0, 0, 0);
     
 }
