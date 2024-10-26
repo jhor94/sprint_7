@@ -1,1 +1,40 @@
-<p>register works!</p>
+<div class="row text-center">
+  <h2> Regístrate gratis</h2>
+</div>
+<div class="card-container">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="formRegister" class="form-custom">
+        <mat-form-field class="input-custom">
+          <mat-label>Introduzca su nombre: </mat-label>
+          <input matInput placeholder="nombre" formControlName="name">
+        </mat-form-field>
+        <mat-form-field class="input-custom">
+          <mat-label>Introduzca una correo: </mat-label>
+          <input matInput placeholder="Correo electrónico" formControlName="email">
+          @if(this.formRegister.controls['email'].errors?.['required'] && this.submitted && this.formRegister.controls['email'].touched){
+            <span class="error-message" >Email es requerido</span>
+          }
+          <br>
+          @if(errorMessage && errorMessage.includes("El correo ya esta en uso") && this.formRegister.controls['email'].touched && this.submitted){
+            <span class="error-message" >{{ errorMessage }}</span>
+            }
+        </mat-form-field>
+       
+        <mat-form-field class="input-custom">
+          <mat-label>Introduzca una contraseña: </mat-label>
+          <input matInput placeholder="Password" formControlName="password" type="password" autocomplete="current-password">
+        </mat-form-field>
+        <div class="flex">
+          <button  type="button" class="btn custom-warn-btn" (click)="registerIn()">Registrarse</button>
+        </div>
+      </form>
+
+      <!-- Mostrar mensajes de error o éxito -->
+    
+      @if(successMessage){
+      <mat-error class="success-message">{{ successMessage }}</mat-error>
+      }
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,9 +1,17 @@
+
+
 .navbar {
   background-color: #000; /* Fondo negro */
 }
 
 body{
   background-color: black;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .nav-link {
@@ -18,8 +26,6 @@ body{
   color: white;
   text-decoration: underline;
   font-size: 28px;
-  
-  
 }
 
 img{
@@ -32,6 +38,10 @@ app-home{
   background-color: black;
 }
 
+
+ .container footer{
+  width: 100%;
+}
 footer p{
   color: white;
 }

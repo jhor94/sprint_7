@@ -1,0 +1,68 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css"; 
+
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 70px;
+}
+
+mat-card{
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    background-color:rgb(255, 207, 32);
+    border-radius: 5px;
+}
+
+.row h2{
+    font-family: 'Fira Code', monospace;
+    color: white;
+    margin-top: 100px;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+
+.form-custom{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.input-custom{
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between; /* Separar los botones horizontalmente */
+    margin-top: 15px; /* Espacio entre los inputs y los botones */
+  }
+
+.custom-primary-btn{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-family: 'Fira Code', monospace;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.custom-warn-btn{
+    background-color: rgb(0, 0, 0);
+    color: rgb(247, 245, 245);
+    font-weight: bold;
+    font-family: 'Fira Code', monospace;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease; 
+}
+
+.custom-primary-btn:hover{
+    transform: scale(1.05);
+}
+
+.custom-warn-btn:hover{
+    transform: scale(1.05);
+}

@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div class="row text-center">
+  <h2> Accede a tu cuenta Star Wars </h2>
+</div>
+<div class="card-container">
+ 
+    <mat-card>
+          <mat-card-content>
+            <form [formGroup]="formLogin" class="form-custom">
+                <mat-form-field class="input-custom">
+                    <mat-label>Introduzca una correo: </mat-label>
+                    <input  matInput placeholder="Correo electrónico" formControlName="email">
+                  </mat-form-field>
+                  <mat-form-field class="input-custom">
+                    <mat-label>Introduzca una contraseña: </mat-label>
+                    <input  matInput placeholder="Password" formControlName="password" type="password" autocomplete="current-password">
+                  </mat-form-field>
+                  <div class="flex">
+                    <button class="btn custom-primary-btn" (click)="LoginIn()">Iniciar sesión</button>
+                    <button class="btn custom-warn-btn" (click)="register()">Registrarse</button>
+                  </div>
+            </form>
+          </mat-card-content>
+    </mat-card>     
+</div>

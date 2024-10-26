@@ -1,7 +1,10 @@
 {
-
-    "users": []
-  
-  }
-
-  
+  "users": [
+    {
+      "email": "jhorman@gmail.com",
+      "password": "$2a$10$2ja7t4p0omf7H/gmmpQdeOtvJd/ZZ5ua8d2RVeO1KaMgQ.r.ESMuu",
+      "name": "jhorman",
+      "id": 1
+    }
+  ]
+}

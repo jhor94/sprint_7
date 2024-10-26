@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Ship } from '../../interficies/ships-list';
+import { Ship } from '../../interfaces/ships-list';
 import { shipsService } from '../../services/shipsService';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';

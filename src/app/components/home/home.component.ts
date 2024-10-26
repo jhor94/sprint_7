@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { StarshipsComponent } from '../starships/starships.component';
 import { shipsService } from '../../services/shipsService';
-import { Ship } from '../../interficies/ships-list';
+import { Ship } from '../../interfaces/ships-list';
 import { RouterModule, RouterOutlet} from '@angular/router';
 
 @Component({

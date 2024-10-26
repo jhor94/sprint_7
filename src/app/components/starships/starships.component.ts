@@ -1,6 +1,6 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { shipsService } from '../../services/shipsService';
-import { Ship } from '../../interficies/ships-list';
+import { Ship } from '../../interfaces/ships-list';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { StarshipsDetailsComponent } from '../starships-details/starships-details.component';
