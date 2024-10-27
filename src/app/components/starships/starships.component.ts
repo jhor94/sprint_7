@@ -16,6 +16,7 @@ export class StarshipsComponent implements OnInit {
 
   shipService = inject(shipsService);
   shipsList: Ship[] = [];
+  pilots : any[]= []
 
   currentnumberPage = 1
 

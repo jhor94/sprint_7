@@ -1,0 +1,17 @@
+@if(pilots.length > 0){
+<div class="container">
+    <div class="row custom-row">
+        <h3>PILOTS</h3>
+    </div>
+    <div class="card-container">
+        @for(pilot of pilots; track pilot.name){
+        <div class="card">
+            <!-- <img src="..." class="card-img-top" alt="...">-->
+            <div class="card-body">
+                <h5 class="card-title">{{pilot.name}}</h5>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+}

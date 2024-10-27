@@ -3,12 +3,13 @@ import { Ship } from '../../interfaces/ships-list';
 import { shipsService } from '../../services/shipsService';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { PilotsComponent } from "./pilots/pilots/pilots.component";
 
 
 @Component({
   selector: 'app-starships-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PilotsComponent],
   templateUrl: './starships-details.component.html',
   styleUrl: './starships-details.component.scss'
 })
