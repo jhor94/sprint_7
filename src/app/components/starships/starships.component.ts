@@ -30,7 +30,8 @@ export class StarshipsComponent implements OnInit {
     this.shipService.getShip(this.currentnumberPage).subscribe((data: Ship[]) => {
       const newShips = data.map(ship => ({
         ...ship,
-        id: ship.url.split('/').slice(-2, -1)[0]
+        id: ship.url.split('/').slice(-2, -1)[0],
+        imgUrl: `https://starwars-visualguide.com/assets/img/starships/${ship.id}.jpg`,
       }));
       this.shipsList = [...this.shipsList, ...newShips]
       console.log(this.shipsList)

@@ -15,7 +15,8 @@ import { PilotsComponent } from "./pilots/pilots/pilots.component";
 })
 export class StarshipsDetailsComponent implements OnInit {
 shipService = inject(shipsService);
-ship!:Ship
+ship!:Ship;
+imgUrl!: string;
 
 
 constructor(private route: ActivatedRoute){
@@ -32,7 +33,8 @@ ngOnInit(): void {
 getListShipId(id:string) {
   this.shipService.getShipById(id).subscribe((ship: Ship) => {
     this.ship = ship
-    console.log(ship)
+    this.imgUrl = `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`
+    console.log("aqui entra la imagen",this.imgUrl)
     });
   }
 }

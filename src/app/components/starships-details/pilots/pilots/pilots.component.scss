@@ -10,7 +10,7 @@ li{
     font-family: 'Fira Code', monospace; 
 }
 
-.custom-row h3{
+.custom-row h3, h5{
     font-family: 'Fira Code', monospace;
     color: white;
 }
@@ -20,6 +20,8 @@ li{
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 20px;
+    font-family: 'Fira Code', monospace;
+    
 }
 
 .card {

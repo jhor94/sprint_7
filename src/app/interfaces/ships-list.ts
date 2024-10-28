@@ -17,6 +17,7 @@ export interface Ship {
     films: string[],
     created: Date,
     edited: Date,
-    url: string
+    url: string,
+    imgUrl?:string,
 }
 

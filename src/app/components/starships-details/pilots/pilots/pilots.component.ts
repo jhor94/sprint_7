@@ -16,18 +16,30 @@ export class PilotsComponent implements OnInit{
   pilots: any[]= []
   noPilots: string = ""
   currentnumberPage = 1
+  imgUrl!: string
+  ship!: Ship
 
 ngOnInit(): void {
   this.loadPilots(this.pilotsShips);
 }
 
+
+
 loadPilots(pilotsShips: string[]) {
   console.log('entran las urls', pilotsShips)
   this.shipService.getPilots(pilotsShips).subscribe((data: any[]) => {
-    this.pilots = data;
+    this.pilots = data.map((pilot)=>{
+      const pilotId = pilot.url.split('/').slice(-2,-1)[0];
+      return{
+        name:pilot.name,
+        imgUrl: `https://starwars-visualguide.com/assets/img/characters/${pilotId}.jpg`,
+      }
+    })
     console.log(this.pilots)
     })
   }
+
+
 
   }
 
