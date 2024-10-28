@@ -11,6 +11,12 @@
       "password": "$2a$10$8oYtXNfHRwSerPABKRGo2.BUFuG1yuHJcEg625zVZE1435BooTt2C",
       "name": "jho",
       "id": 2
+    },
+    {
+      "email": "joselito@lito.com",
+      "password": "$2a$10$ICrDYa4ULeOzqF/s0NSDreAmGVUXMA70Z6GNW55grfoKm1CPbX7Fe",
+      "name": "Jose",
+      "id": 3
     }
   ]
 }
