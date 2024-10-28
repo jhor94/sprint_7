@@ -2,8 +2,6 @@ import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 
 export const accesoGuard: CanActivateFn = (route, state) => {
-  return true;
-/*  debugger
   const token = localStorage.getItem('token') || "";
   const router = inject(Router);
 
@@ -12,5 +10,5 @@ export const accesoGuard: CanActivateFn = (route, state) => {
   }else{
     router.navigate(['/login']);
     return false;
-  }*/
+  }
 };

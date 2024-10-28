@@ -21,6 +21,28 @@ body{
   margin: 20px;
 }
 
+#acceso{
+  background-color: rgb(255, 207, 32);;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#acceso:hover{
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-family: 'Fira Code', monospace;
+  font-size: 22px;
+  text-decoration: none;
+  
+}
+
+
 
 .nav-link:hover {
   color: white;

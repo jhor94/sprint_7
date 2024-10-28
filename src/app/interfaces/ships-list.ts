@@ -1,4 +1,5 @@
 export interface Ship {
+    map(arg0: (ship: any) => { imgUrl: string; }): Ship;
     id?: string,
     name: string,
     model:string,

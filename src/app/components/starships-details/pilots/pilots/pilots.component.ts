@@ -15,9 +15,8 @@ export class PilotsComponent implements OnInit{
   @Input() pilotsShips :Array<string> = []
   pilots: any[]= []
   noPilots: string = ""
-  currentnumberPage = 1
   imgUrl!: string
-  ship!: Ship
+ 
 
 ngOnInit(): void {
   this.loadPilots(this.pilotsShips);
@@ -38,8 +37,6 @@ loadPilots(pilotsShips: string[]) {
     console.log(this.pilots)
     })
   }
-
-
 
   }
 

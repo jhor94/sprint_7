@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet} from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterModule, RouterOutlet} from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -15,6 +15,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { AuthServiceService } from './services/auth-service.service';
 
 @Component({
   selector: 'app-root',
@@ -38,6 +39,8 @@ import {MatButtonModule} from '@angular/material/button';
 export class AppComponent {
   title = 'sprint_7';
 
+  private accesoService = inject(AuthServiceService)
+  private router = inject(Router)
   mensajeParaHija:string = 'mensaje a hija'
 
   showList: boolean = false;
@@ -46,5 +49,13 @@ export class AppComponent {
     this.showList = !this.showList;
   }
 
+  isLoggedIn():boolean{
+    return this.accesoService.IsLogin();
+  }
+
+  logOut(){
+    this.accesoService.removeLogin();
+    this.router.navigate(['/login'])
+  }
 
 }

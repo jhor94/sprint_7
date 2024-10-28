@@ -20,12 +20,21 @@ export class shipsService {
     return this.http.get<Ship>(`${this.apiUrl}${id}/`);
   }
 
-  //piltos
 
-  
+  getShipImg( ImgShips :string []) : Observable<any[]>{
+    return forkJoin(ImgShips.map(url => this.http.get(url)));
+  }
+
+  //piltos
 
   getPilots( pilotsShips :string []) : Observable<any[]>{
     return forkJoin(pilotsShips.map(url => this.http.get(url)));
+  }
+
+  //Films
+
+  getFilms( filmsShips :string []) : Observable<any[]>{
+    return forkJoin(filmsShips.map(url => this.http.get(url)));
   }
 
 

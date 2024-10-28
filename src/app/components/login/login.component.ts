@@ -46,7 +46,7 @@ export class LoginComponent {
       if (response && response.accessToken) {
         localStorage.setItem('token', response.accessToken)
         this.router.navigate(['starship'])
-        alert("logeado correcto")
+        console.log("logeado correcto")
       }
     },
       error => {

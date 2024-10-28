@@ -7,8 +7,12 @@
     </div>
     <div class=" container-fluid navbar-nav" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" [routerLink]="['login']">Login</a>
-        <a class="nav-link" [routerLink]="['register']">Register</a>
+        @if(!isLoggedIn()){
+        <a id="acceso" class="nav-link" [routerLink]="['login']">Login</a>
+        <a  id="acceso" class="nav-link" [routerLink]="['register']">Register</a>
+        } @else {
+          <a id="acceso" class="nav-link" (click)="logOut()">Logout</a>
+        }
       </div>
     </div>
   </nav>

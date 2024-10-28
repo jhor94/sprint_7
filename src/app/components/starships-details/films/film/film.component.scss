@@ -1,0 +1,53 @@
+li{
+    list-style-type: none;
+    font-weight: bold;
+    font-family: 'Fira Code', monospace; 
+}
+
+.custom-row{
+    border: 2px solid grey;
+    margin-top: 20px;
+    font-family: 'Fira Code', monospace; 
+}
+
+.custom-row h3, h5{
+    font-family: 'Fira Code', monospace;
+    color: white;
+    text-align: justify;
+    margin:10px;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    font-family: 'Fira Code', monospace;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.card {
+    width: 18rem;
+    display: flex;
+    border: 2px solid grey;
+    background-color: black;
+    color: white;
+    margin: 10px;
+    text-align: center;
+}
+
+.card-title{
+    font-family: 'Fira Code', monospace;
+    font-size: 15px;
+    justify-content: center;
+
+}
+
+.card-text{
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    text-align: center;
+    align-items: center;
+}

@@ -38,6 +38,8 @@ export class AuthServiceService {
     return !!localStorage.getItem('token'); // valida token para hacer hacer login
   }
 
+ 
+
   removeLogin(){
     return localStorage.removeItem('token'); //quita toket para hacer log out
   }

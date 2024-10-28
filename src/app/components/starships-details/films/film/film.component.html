@@ -1,1 +1,31 @@
-<p>film works!</p>
+@if(films.length > 0){
+<div class="container">
+    <div class="row custom-row">
+        <h3>FILMS</h3>
+    </div>
+    <div class="card-container">
+        @for(film of films; track film.id){
+        <div class="card">
+            <img [src]="film.imgUrl" class="card-img-top" alt="imagen de {{film.title}}">
+            <div class="card-body">
+                <h6 class="card-title">{{film.title}}</h6>
+                <div class="card-body">
+                    <p class="card-text d-flex"> Episodio numero {{film.episode}}</p>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+}@else {
+<div class="container">
+    <div class="row custom-row">
+        <h3>FILMS</h3>
+    </div>
+    <div class="card-container">
+        <div class="card custom-row">
+            <h5 class="card-title text-center"> Not Films</h5>
+        </div>
+    </div>
+</div>
+}
