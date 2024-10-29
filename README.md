@@ -1,27 +1,84 @@
-# Sprint7
+## Descripción del Proyecto
+Este proyecto está diseñado para mostrar las naves del universo de Star Wars, los pilotos que las conducen y las películas en las que aparecen. Se realiza una conexión con la API pública de Star Wars para obtener datos de las naves y sus respectivos pilotos, además de utilizar una fuente de imágenes para mostrar representaciones visuales de las naves. El objetivo es ofrecer una experiencia interactiva que permita a los usuarios explorar el vasto mundo de Star Wars a través de una interfaz amigable.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
+## Interacciones entre Componentes y Servicios
+El proyecto consta de los siguientes componentes:
 
-## Development server
+- Home: La página principal donde se puede navegar hacia las diferentes secciones del proyecto.
+- Login: Permite a los usuarios autenticarse en la aplicación.
+- Registro: Facilita el registro de nuevos usuarios.
+- Starships: Muestra una lista de las naves de Star Wars obtenidas de la API.
+- Starships-Details: Proporciona información detallada sobre una nave específica, incluidos los pilotos que la conducen.
+- Las interacciones entre componentes y servicios son las siguientes:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Servicios:
+- AuthService: Se encarga de la autenticación de los usuarios.
+- StarshipService: Maneja la lógica de obtención de datos de las naves y los pilotos desde la API.
+- Guards: Se utilizan para restringir el acceso a ciertas rutas, asegurando que solo los usuarios autenticados puedan acceder a determinadas secciones de la aplicación.
+- Características Principales
+- Autenticación de usuarios mediante JSON Server y json-server-auth.
+- Visualización de naves de Star Wars con sus respectivos pilotos y detalles.
+- Protección de rutas mediante guards.
+- Interfaz de usuario responsiva y atractiva gracias a Bootstrap y Angular Material.
 
-## Code scaffolding
+## Estructura del Proyecto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+/src
+|-- /app
+|   |-- /components
+|   |   |-- home
+|   |   |-- login
+|   |   |-- registro
+|   |   |-- starships
+|   |   |-- starships-details
+|   |-- /services
+|   |   |-- auth.service.ts
+|   |   |-- starship.service.ts
+|   |-- /guards
+|   |   |-- auth.guard.ts
+|-- db.json
 
-## Build
+## Tecnologías Utilizadas
+- Angular: Framework para la creación de la aplicación.
+- Bootstrap: Framework CSS para diseño responsivo.
+- Angular Material: Para formularios reactivos y componentes de interfaz de usuario.
+- JSON Server: Para simular un backend RESTful.
+- json-server-auth: Para manejar la autenticación de usuarios.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Instalación
+Para instalar y ejecutar este proyecto, sigue los pasos a continuación:
 
-## Running unit tests
+1. Clona el repositorio:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+bash
+Copiar código
+git clone <url-del-repositorio>
+cd <nombre-del-repositorio>
 
-## Running end-to-end tests
+2. Instala las dependencias:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+bash
+Copiar código
+npm install
+Instala JSON Server y json-server-auth:
 
-## Further help
+bash
+Copiar código
+npm install -g json-server json-server-auth
+Configura y ejecuta el servidor JSON: Crea un archivo db.json en la raíz del proyecto y agrega tu configuración. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Luego, ejecuta:
+
+bash
+Copiar código
+json-server --watch db.json --port 3000 --middlewares ./node_modules/json-server-auth/middleware.js
+
+3. Ejecuta la aplicación Angular:
+
+bash
+Copiar código
+ng serve
+Accede a la aplicación en http://localhost:4200.
+
+## Conclusiones
+Este proyecto proporciona una plataforma interactiva para los aficionados de Star Wars, permitiendo explorar las naves y sus pilotos. La integración de Angular con servicios RESTful facilita la obtención de datos en tiempo real, mientras que la autenticación asegura que los usuarios tengan una experiencia personalizada. Las herramientas y tecnologías utilizadas en este proyecto son ampliamente reconocidas y proporcionan una base sólida para futuros desarrollos.
