@@ -1,25 +1,28 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid d-flex justify-content-end">
+    <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img clas="img-fluid" src="/assets/logo.png" alt="">
       </a>
     </div>
-    <div class=" container-fluid navbar-nav" id="navbarNavAltMarkup">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup1" aria-controls="navbarNavAltMarkup1" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class=" collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup1">
       <div class="navbar-nav">
         @if(!isLoggedIn()){
         <a id="acceso" class="nav-link" [routerLink]="['login']">Login</a>
-        <a  id="acceso" class="nav-link" [routerLink]="['register']">Register</a>
+        <a id="acceso" class="nav-link" [routerLink]="['register']">Register</a>
         } @else {
-          <a id="acceso" class="nav-link" (click)="logOut()">Logout</a>
+        <a id="acceso" class="nav-link" (click)="logOut()">Logout</a>
         }
       </div>
     </div>
   </nav>
 
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg mt-2">
     <div class=" container-fluid navbar-nav d-flex justify-content-center" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+      <div class="navbar-nav text-center">
         <a class="nav-link" [routerLink]="['/']">Home</a>
         <a class="nav-link" [routerLink]="['starship']"> Star Ships</a>
       </div>
@@ -28,13 +31,9 @@
 
   <router-outlet />
 
-  <footer class="d-flex">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p>&copy; 2024 Star Wars API</p>
-        </div>
-      </div>
+  <footer class="d-flex mt-auto py-3">
+    <div class="container text-center">
+      <p>&copy; 2024 Star Wars API</p>
     </div>
   </footer>
 </div>

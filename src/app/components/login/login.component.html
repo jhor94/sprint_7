@@ -8,13 +8,25 @@
             <form [formGroup]="formLogin" class="form-custom">
                 <mat-form-field class="input-custom">
                     <mat-label>Introduzca una correo: </mat-label>
-                    <input  matInput placeholder="Correo electrónico" formControlName="email">
+                    <input  matInput placeholder="" type="email" formControlName="email">
+                    @if(this.formLogin.controls['email'].errors?.['required'] && this.submitted && this.formLogin.controls['email'].touched){
+                      <span class="error-message" >El email es obligatorio o no es válido</span>
+                    }
+                    <br>
+                    @if(emailMessage && this.formLogin.controls['email'].touched && this.submitted){
+                      <span  class="error-message">
+                        El correo ingresado no existe
+                      </span>
+                    }
                   </mat-form-field>
                   <mat-form-field class="input-custom">
                     <mat-label>Introduzca una contraseña: </mat-label>
-                    <input  matInput placeholder="Password" formControlName="password" type="password" autocomplete="current-password">
+                    <input  matInput placeholder="" formControlName="password" type="password" autocomplete="current-password">
+                    @if(this.formLogin.controls['password'].errors?.['required'] && this.submitted && this.formLogin.controls['password'].touched){
+                      <span class="error-message" >La contraseña es obligatorio</span>
+                    }
                   </mat-form-field>
-                  <div class="flex">
+                  <div class=" button-group flex">
                     <button class="btn custom-primary-btn" (click)="LoginIn()">Iniciar sesión</button>
                     <button class="btn custom-warn-btn" (click)="register()">Registrarse</button>
                   </div>

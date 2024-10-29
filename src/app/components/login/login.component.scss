@@ -4,13 +4,14 @@
 .card-container{
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 70px;
+    padding: 20px;
+    min-width: fit-content;
 }
 
 mat-card{
     padding: 30px;
-    max-width: 500px;
+    max-width: 400px;
+    margin: 0 auto;
     width: 100%;
     background-color:rgb(255, 207, 32);
     border-radius: 5px;
@@ -31,9 +32,21 @@ mat-card{
     flex-direction: column;
 }
 
+.form-field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-filed mat-form-field{
+    width: 100%;
+}
+
 .input-custom{
     width: 100%;
 }
+
+
 
 .flex {
     display: flex;
@@ -65,4 +78,17 @@ mat-card{
 
 .custom-warn-btn:hover{
     transform: scale(1.05);
+}
+
+.error-message {
+    color: red; /* Color para mensajes de error */
+    font-size: 13px;
+}
+
+.button-group{
+    flex-direction: column;
+    margin: 20px;
+}
+.button-group button{
+    margin: 10px;
 }

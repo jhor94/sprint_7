@@ -5,6 +5,7 @@
     text-align: center;
     align-items: center;
     width: 100%;
+    max-width: 1000px;
     
 
 }
@@ -16,6 +17,7 @@
     border-width: 2px;
     color: white;
     margin: 10px;
+    padding: 20px;
 }
 
 h3, h1, h2{
@@ -43,6 +45,7 @@ img{
 
 button{
     width: 20%;
+    max-width: 200px;
     justify-content: center;
     align-items: center;
     background-color: rgb(255, 207, 32);;
@@ -53,6 +56,9 @@ button{
     transition: background-color 0.3s, color 0.3s;
     font-size: 20px;
     font-family: 'Fira Code', monospace;
+    display: flex;
+    margin-top: 15px;
+
 }
 
 button:hover{
@@ -61,4 +67,31 @@ button:hover{
     font-family: 'Fira Code', monospace;
     font-size: 22px;
     
+}
+
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        padding: 0 10px; /* Añade padding lateral para mejorar la legibilidad en móviles */
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
 }

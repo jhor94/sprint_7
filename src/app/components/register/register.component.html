@@ -7,25 +7,32 @@
       <form [formGroup]="formRegister" class="form-custom">
         <mat-form-field class="input-custom">
           <mat-label>Introduzca su nombre: </mat-label>
-          <input matInput placeholder="nombre" formControlName="name">
+          <input matInput placeholder="" formControlName="name">
+          @if(this.formRegister.controls['name'].errors?.['required'] && this.submitted && this.formRegister.controls['name'].touched){
+            <span class="error-message" >El nombre es obligatorio</span>
+          }
+          <br>
         </mat-form-field>
         <mat-form-field class="input-custom">
           <mat-label>Introduzca una correo: </mat-label>
-          <input matInput placeholder="Correo electrónico" formControlName="email">
+          <input matInput placeholder=""  type="email" formControlName="email">
           @if(this.formRegister.controls['email'].errors?.['required'] && this.submitted && this.formRegister.controls['email'].touched){
-            <span class="error-message" >Email es requerido</span>
+            <span class="error-message" >El correo es obligatorio</span>
           }
           <br>
-          @if(errorMessage && errorMessage.includes("El correo ya esta en uso") && this.formRegister.controls['email'].touched && this.submitted){
-            <span class="error-message" >{{ errorMessage }}</span>
+          @if(errorMessage && this.formRegister.controls['email'].touched && this.submitted){
+            <span class="error-message" >El correo ya existe o no es válido</span>
             }
         </mat-form-field>
        
         <mat-form-field class="input-custom">
           <mat-label>Introduzca una contraseña: </mat-label>
-          <input matInput placeholder="Password" formControlName="password" type="password" autocomplete="current-password">
+          <input matInput placeholder="" formControlName="password" type="password" autocomplete="current-password">
+          @if(this.formRegister.controls['password'].errors?.['required'] && this.submitted && this.formRegister.controls['password'].touched){
+            <span class="error-message" >El nombre es obligatorio</span>
+          }
         </mat-form-field>
-        <div class="flex">
+        <div class="button-group flex">
           <button  type="button" class="btn custom-warn-btn" (click)="registerIn()">Registrarse</button>
         </div>
       </form>

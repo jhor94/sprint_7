@@ -2,21 +2,9 @@
   "users": [
     {
       "email": "jhorman@gmail.com",
-      "password": "$2a$10$2ja7t4p0omf7H/gmmpQdeOtvJd/ZZ5ua8d2RVeO1KaMgQ.r.ESMuu",
+      "password": "$2a$10$cy4kogOx8bVQRAkqel9YPOaASJ6ev7WMmBZ8kKSBYZ4NyXQca8Zxe",
       "name": "jhorman",
       "id": 1
-    },
-    {
-      "email": "jhor@gmail.com",
-      "password": "$2a$10$8oYtXNfHRwSerPABKRGo2.BUFuG1yuHJcEg625zVZE1435BooTt2C",
-      "name": "jho",
-      "id": 2
-    },
-    {
-      "email": "joselito@lito.com",
-      "password": "$2a$10$ICrDYa4ULeOzqF/s0NSDreAmGVUXMA70Z6GNW55grfoKm1CPbX7Fe",
-      "name": "Jose",
-      "id": 3
     }
   ]
 }

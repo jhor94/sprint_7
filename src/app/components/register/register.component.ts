@@ -40,7 +40,7 @@ export class RegisterComponent {
 
   public formRegister: FormGroup = this.formBuild.group({
     name: ["", Validators.required],
-    email: ["", Validators.required],
+    email: ["", Validators.required, Validators.email],
     password: ["", Validators.required],
   })
   

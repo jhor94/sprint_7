@@ -28,34 +28,49 @@ export class LoginComponent {
   private router = inject(Router)
 
   public formBuild = inject(FormBuilder)
+  public emailMessage: string | null = ""
 
   public formLogin: FormGroup = this.formBuild.group({
-    email: ["", Validators.required],
+    email: ["", [Validators.required, Validators.email]],
     password: ["", Validators.required],
   })
+  submitted: any;
 
   LoginIn() {
+    this.submitted = true;
     if (this.formLogin.invalid) {
-      alert("error con el formulario")
+      this.emailMessage = "no funciona el formulario"
+      console.log('error formulario')
       return;
     }
 
-    this.accesoService.login(this.formLogin.value.email, this.formLogin.value.password)
-    .subscribe(
-      response => {
-      if (response && response.accessToken) {
-        localStorage.setItem('token', response.accessToken)
-        this.router.navigate(['starship'])
-        console.log("logeado correcto")
+    const user: User = this.formLogin.value
+    this.accesoService.checkEmail(user.email).subscribe(emailExists => {
+      if (emailExists) {
+        this.accesoService.login(user.email, user.password).subscribe({
+          next: (response) => {
+            if (response && response.accessToken) {
+              localStorage.setItem('token', response.accessToken)
+              this.router.navigate(['starship'])
+              console.log("logeado correcto")
+            } else {
+              alert("error al registrar por token")
+            }
+          },
+          error: (error) => {
+            console.log("error al registrarse", error)
+          }
+        });
+      }else{
+        this.emailMessage = "correo ya existente"
+        console.log("entra error login bien ya que no existe correo")
       }
-    },
-      error => {
-        console.log('error al iniciar sesion', error)
-    })
-}
 
-register(){
-  this.router.navigate(['register'])
-}
+    })
+  }
+
+  register() {
+    this.router.navigate(['register'])
+  }
 }
 
