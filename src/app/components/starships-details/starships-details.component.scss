@@ -10,10 +10,9 @@ body{
         background-color: black;
         position: relative;
         overflow: hidden;
-        padding: 20px;
-        justify-content: space-around;
         flex-wrap: wrap;
-        margin: 20px;
+        margin: auto;
+        min-width: fit-content;
 
 }
 

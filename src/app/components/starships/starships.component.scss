@@ -6,11 +6,15 @@
     color: white;
     font-family: 'Fira Code', monospace;
     padding: 0px;
-    margin:0px;
+    margin:auto;
+    min-width: fit-content;
 }
 
 .card{
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.611);
+    min-width: fit-content;
+    margin: auto;
+    text-align: center;
 }
 
 .card button{
@@ -26,6 +30,7 @@
 }
 .card h2{
     font-family: 'Fira Code', monospace;
+    margin-top: 10px;
 
 }
 .card p{
