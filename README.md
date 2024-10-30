@@ -49,36 +49,18 @@ El proyecto consta de los siguientes componentes:
 Para instalar y ejecutar este proyecto, sigue los pasos a continuación:
 
 1. Clona el repositorio:
-
-bash
-Copiar código
 git clone <url-del-repositorio>
 cd <nombre-del-repositorio>
 
-2. Instala las dependencias:
+2. Instala las dependencias: 
+- npm install para instalar las dependencias Node.js del proyecto
+- Instala JSON Server y json-server-auth: npm install -g json-server json-server-auth
 
-bash
-Copiar código
-npm install
-Instala JSON Server y json-server-auth:
+3. Ejecuta la aplicación Angular y el servidor:
 
-bash
-Copiar código
-npm install -g json-server json-server-auth
-Configura y ejecuta el servidor JSON: Crea un archivo db.json en la raíz del proyecto y agrega tu configuración. 
+- Ejecuta el proyecto con **ng serve -o** para entrar directamente al puerto del proyecto "http://localhost:4200."
+- Ejecuta el servidor con el comando **npm run servidor**
 
-Luego, ejecuta:
-
-bash
-Copiar código
-json-server --watch db.json --port 3000 --middlewares ./node_modules/json-server-auth/middleware.js
-
-3. Ejecuta la aplicación Angular:
-
-bash
-Copiar código
-ng serve
-Accede a la aplicación en http://localhost:4200.
 
 ## Conclusiones
 Este proyecto proporciona una plataforma interactiva para los aficionados de Star Wars, permitiendo explorar las naves y sus pilotos. La integración de Angular con servicios RESTful facilita la obtención de datos en tiempo real, mientras que la autenticación asegura que los usuarios tengan una experiencia personalizada. Las herramientas y tecnologías utilizadas en este proyecto son ampliamente reconocidas y proporcionan una base sólida para futuros desarrollos.

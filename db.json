@@ -2,9 +2,15 @@
   "users": [
     {
       "email": "jhorman@gmail.com",
-      "password": "$2a$10$cy4kogOx8bVQRAkqel9YPOaASJ6ev7WMmBZ8kKSBYZ4NyXQca8Zxe",
+      "password": "$2a$10$UC9xnNAlyQej5AAQsvnSyejUfGXfrffd0qF.Tn815jNYtQTVRtqVm",
       "name": "jhorman",
       "id": 1
+    },
+    {
+      "email": "jhorman1@gmail.com",
+      "password": "$2a$10$vU0EC6V6JtM8NxnjIoPttekVKCoNaqCDESBtAIwWWmRSIzJuRFoHS",
+      "name": "jhorman",
+      "id": 2
     }
   ]
 }

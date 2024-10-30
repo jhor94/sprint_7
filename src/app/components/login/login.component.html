@@ -1,5 +1,5 @@
 <div class="row text-center">
-  <h2> Accede a tu cuenta Star Wars </h2>
+  <h2> Access your Star Wars account </h2>
 </div>
 <div class="card-container">
  
@@ -7,28 +7,28 @@
           <mat-card-content>
             <form [formGroup]="formLogin" class="form-custom">
                 <mat-form-field class="input-custom">
-                    <mat-label>Introduzca una correo: </mat-label>
-                    <input  matInput placeholder="" type="email" formControlName="email">
+                    <mat-label>Email: </mat-label>
+                    <input  matInput type="email" formControlName="email">
                     @if(this.formLogin.controls['email'].errors?.['required'] && this.submitted && this.formLogin.controls['email'].touched){
-                      <span class="error-message" >El email es obligatorio o no es válido</span>
+                      <span class="error-message" >The email is required or invalid.</span>
                     }
                     <br>
                     @if(emailMessage && this.formLogin.controls['email'].touched && this.submitted){
                       <span  class="error-message">
-                        El correo ingresado no existe
+                        The entered email does not exist.
                       </span>
                     }
                   </mat-form-field>
                   <mat-form-field class="input-custom">
-                    <mat-label>Introduzca una contraseña: </mat-label>
-                    <input  matInput placeholder="" formControlName="password" type="password" autocomplete="current-password">
+                    <mat-label>Password: </mat-label>
+                    <input  matInput formControlName="password" type="password" autocomplete="current-password">
                     @if(this.formLogin.controls['password'].errors?.['required'] && this.submitted && this.formLogin.controls['password'].touched){
-                      <span class="error-message" >La contraseña es obligatorio</span>
+                      <span class="error-message" >The password is required.</span>
                     }
                   </mat-form-field>
                   <div class=" button-group flex">
-                    <button class="btn custom-primary-btn" (click)="LoginIn()">Iniciar sesión</button>
-                    <button class="btn custom-warn-btn" (click)="register()">Registrarse</button>
+                    <button class="btn custom-primary-btn" (click)="LoginIn()">Log in</button>
+                    <button class="btn custom-warn-btn" (click)="register()">Sing up</button>
                   </div>
             </form>
           </mat-card-content>

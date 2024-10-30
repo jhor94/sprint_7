@@ -21,8 +21,8 @@ export class AuthServiceService {
       }),
       catchError(()=> of(false))
     )
-  }
-
+  
+}
   register(user: User): Observable<ResponseAccess> {
     return this.httpClient.post<ResponseAccess>(`${this.apiUrl}/users`, user)
   }

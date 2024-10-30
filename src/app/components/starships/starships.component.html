@@ -1,19 +1,27 @@
-<div>
+<div class="container row text-center" (scroll)="onScroll($event)">
 @for(ship of shipsList; track ship.id){
 
-    <div id="container" class="row text-center">
+    <div id="container" class="row text-center"> 
         <div class="card">
-            <h2>
+            <h1>
                 <button [routerLink]="['/starship', ship.id]"  routerLinkActive="active">{{ship.name}}</button>
-            </h2>
+            </h1>
             <p>{{ship.model}} </p>
         </div>
     </div>
     }
+
+@if(!allShipsLoad && currentnumberPage < 5){
+    <div id="container" class="row text-center">
+        <!--<button class=" btn justify-content-end" (click)="loadMoreShips()">View more</button>-->
 </div>
-<div id="container" class="row text-center">
-        <button class=" btn justify-content-end" (click)="loadMoreShips()">view more</button>
+}@else {
+    <div id="container" class="row text-center">
+        <h5>There are no more ships available </h5>
+    </div>
+}
 </div>
+
 
 
 

@@ -31,7 +31,7 @@ export class LoginComponent {
   public emailMessage: string | null = ""
 
   public formLogin: FormGroup = this.formBuild.group({
-    email: ["", [Validators.required, Validators.email]],
+    email: ["", Validators.required, Validators.email],
     password: ["", Validators.required],
   })
   submitted: any;
